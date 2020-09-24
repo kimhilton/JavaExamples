@@ -1,3 +1,7 @@
+
+/*  Demonstrating basic inheritance between concrete classes in Java 11 - see AbstractAndInterfaces.java for more complex examples
+
+*/
 public class Inheritance {
     public static void main (String[] args){
         Animal a = new Dog();
@@ -18,6 +22,7 @@ public class Inheritance {
 }
 
 class Animal {
+    //static void bark(){   //  if this method is static, then Dog.bark() has to be static as well
     void bark(){
         System.out.println("*some animal noise*");
     }
