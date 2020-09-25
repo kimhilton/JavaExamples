@@ -1,4 +1,3 @@
-
 /*  Demonstrating basic inheritance between concrete classes in Java 11 - see AbstractAndInterfaces.java for more complex examples
 
 */
