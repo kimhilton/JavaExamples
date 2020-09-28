@@ -4,7 +4,7 @@
 public class AbstractAndInterfaces {
 
     public static void main(String[] args){
-        new Pug().howl();   //  notice that Pug inherits DogClass' howl(), which in turn hides DogInterfaces' howl(). Also notice that DogClass.howl() needs to be public
+        new Pug().howl();   //  notice that Pug inherits DogClass' howl(), which in turn hides DogInterfaces' howl() implementation. Also notice that DogClass.howl() needs to be public
     }
 }
 
@@ -14,8 +14,12 @@ interface DogInterface{
     default void howl(){
         System.out.println("DogInterface howls");
     }
-    */
+*/
     void howl();
+}
+
+interface DogInterface2{
+    void howl(int i);
 }
 
 abstract class DogClass{
@@ -24,10 +28,11 @@ abstract class DogClass{
     public DogClass(){
         System.out.println("Dog initialized");
     }
-
+/*
     public void howl(){
         System.out.println("Dog howls");
     }
+*/
     //abstract void howl();   //  valid
     //static void howl(){}    // invalid if Dog is not static
     //static void howl();   //  invalid. static methods cannot be overriden
@@ -38,12 +43,19 @@ abstract class DogClass{
 }
 
 /*
-    In this case, Pug will inherit DocClass' howl(), even if DogInterface provides its own howl() implementation
+    In this case, Pug will inherit DogClass' howl(), even if DogInterface provides its own howl() implementation
     extends has to be specified before implements
 */
-class Pug extends DogClass implements DogInterface{
+class Pug extends DogClass implements DogInterface, DogInterface2{
     //public void howl(){}   // valid, and required. the first regular (compact) class to inherit from an abstract class must provide implementations
     //private void howl(){}   //  invalid. similarly to regular classes, æ subclass cannot define an overriding method that is more restrictive than the superclasses'
     //abstract void howl();   //  invalid. regular class cannot have abstract methods
     //static void howl(){}    //  invalid if Dog and Dog.howl() is not static
+    public void howl(){
+        System.out.println("howling");
+    }
+
+    public void howl(int i){
+        System.out.println("howling again");
+    }
 }

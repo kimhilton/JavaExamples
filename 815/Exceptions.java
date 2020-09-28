@@ -24,7 +24,7 @@ public class Exceptions {
     //    methodA();  // doesn't work because IOException is a superclass of FileNotFoundException
     }
 
-    public void methodC() throws FileNotFoundException{
+    public void methodC() throws FileNotFoundException{ //  see main() for interaction
         System.out.println("Do you have to use the throw keyword if you declare your class with throws?");
         throw new FileNotFoundException("well yes. but also no.");
     }
