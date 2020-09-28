@@ -61,6 +61,8 @@ public class Exceptions {
                 }
     }
 
+    public void methodF() throws RuntimeException{}
+
 
     class Animal {
         void eat() throws IOException{} // superclass method can have an equal or larger "exception view" than the subclass method
@@ -81,5 +83,7 @@ public class Exceptions {
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
+
+        new Exceptions().methodF(); //  notice that methodF can be called. This is because methodF throws an unchecked exceptions
     }
 }
